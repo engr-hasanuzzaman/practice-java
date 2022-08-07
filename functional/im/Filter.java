@@ -2,6 +2,8 @@ package functional.im;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class Filter {
     enum GENDER {
@@ -24,7 +26,9 @@ public class Filter {
             }
         }
 
-        System.out.println(females);
+        // declarative ways to filter
+        persons.stream().filter(p -> p.gender == GENDER.FEMALE);
+        System.out.println( persons.stream().filter(p -> p.gender == GENDER.FEMALE).collect(Collectors.toList()));
     }
 
     static class Person {
