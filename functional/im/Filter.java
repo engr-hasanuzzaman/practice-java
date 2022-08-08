@@ -2,22 +2,21 @@ package functional.im;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Filter {
     enum GENDER {
         MALE, FEMALE;
     };
+
     public static void main(String[] args) {
         List<Person> persons = List.of(
-            new Person("hasan", GENDER.MALE),
-            new Person("salma", GENDER.FEMALE),
-            new Person("shila", GENDER.FEMALE),
-            new Person("sumi", GENDER.FEMALE),
-            new Person("eti", GENDER.FEMALE),
-            new Person("santo", GENDER.MALE)
-        );
+                new Person("hasan", GENDER.MALE),
+                new Person("salma", GENDER.FEMALE),
+                new Person("shila", GENDER.FEMALE),
+                new Person("sumi", GENDER.FEMALE),
+                new Person("eti", GENDER.FEMALE),
+                new Person("santo", GENDER.MALE));
 
         List<Person> females = new ArrayList<>();
         for (Person person : persons) {
@@ -28,7 +27,10 @@ public class Filter {
 
         // declarative ways to filter
         persons.stream().filter(p -> p.gender == GENDER.FEMALE);
-        System.out.println( persons.stream().filter(p -> p.gender == GENDER.FEMALE).collect(Collectors.toList()));
+        System.out.println(persons.stream().filter(p -> p.gender == GENDER.FEMALE).collect(Collectors.toList()));
+
+        // with function ref
+        persons.stream().filter(p -> p.gender == GENDER.FEMALE).forEach(System.out::print);
     }
 
     static class Person {
@@ -42,7 +44,6 @@ public class Filter {
 
         @Override
         public String toString() {
-            // TODO Auto-generated method stub
             return name + "-" + gender;
         }
     }
