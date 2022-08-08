@@ -7,5 +7,6 @@ public class _Consumer {
         pr.accept("sumon");
     }
 
+    // consumer will have side effect
     private static Consumer pr = name -> System.out.println("My name is " + name);
 }
