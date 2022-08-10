@@ -13,6 +13,4 @@ public class _Predicate {
     private static Predicate<String> isStartWith07 = num -> num.startsWith("017");
     private static Predicate<String> isOnlyNumber = num -> num.matches("[0-9]+");
     private static Predicate<String> isValidPhone = num -> isLengthEleven.and(isStartWith07).and(isOnlyNumber).test(num);
-
-
 }
