@@ -14,6 +14,11 @@ public class _Options {
 
         Object obj = Optional.ofNullable("Main value").orElseGet(() -> "Default Value from supplier");
         System.out.println("Print the obj: " + obj);
+
+        Optional.ofNullable(null).ifPresent(System.out::println);
+        Optional.ofNullable(null).ifPresentOrElse(System.out::println, () -> {
+            System.out.println("There is no value provided");
+        });
     }
 
 }
