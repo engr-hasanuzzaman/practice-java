@@ -12,7 +12,6 @@ public class _Function {
 
         // called the chained method
         System.out.println(incByOneAndMulBy2.apply(2));
-
     }
 
     static Function<Integer, Integer> incByOne = num -> num + 1;
