@@ -14,4 +14,12 @@ mainClassName='darek.tutorial.FirstClass'
 
 repositories {
     mavenCentral()
+    // google()
+    // mavenLocal()
+    // maven {
+    //     url = 'https://tomgregory.com/maven2'
+    // }
+    // flatDir {
+    //     dirs 'lib'
+    // }
 }
