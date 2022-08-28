@@ -11,3 +11,7 @@
 // defatul path is src/main/java
 sourceSets.main.java.srcDirs = ['.']
 mainClassName='darek.tutorial.FirstClass'
+
+repositories {
+    mavenCentral()
+}
